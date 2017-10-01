@@ -59,7 +59,7 @@ function attachLoggersToRequest(protocol, options, callback) {
     if (typeof options === 'string') {
         options = url.parse(options);
     }
-    _.assign(logInfo.request, _.pick(options, 'port', 'path', 'host', 'protocol', 'auth', 'hostname', 'hash', 'search', 'query', 'pathname', 'href', 'shouldLog'));
+    _.assign(logInfo.request, _.pick(options, 'port', 'path', 'host', 'protocol', 'auth', 'hostname', 'hash', 'search', 'query', 'pathname', 'href', 'shouldLog', 'targetName', "callName"));
 
     logInfo.request.method = req.method || 'get';
     logInfo.request.headers = req._headers;
